@@ -1,0 +1,62 @@
+server:
+  tomcat:
+    url-encoding: UTF-8
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: edu-spring-data-jdbc
+  main:
+    web-application-type: reactive
+  profiles:
+    active: prd
+  banner:
+    location: "classpath:banner.txt"
+# caffein cache 사용을 위해 cache name 설정
+  #cache:
+  #  cache-names: employee
+#  cache:
+#    type: redis
+#  data:
+#    redis:
+#      host: 211.252.87.34 # 127.0.0.1
+#      port: 30020 # 6379
+
+#  security:
+#    user:
+#      name: admin
+#      password: admin
+#  boot:
+#    admin:
+#      client:
+#        url: http://localhost:8080
+
+# logging
+logging:
+  config: classpath:log4j2.xml
+
+#jasypt encryptor
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
+
+jwt:
+  secret: CloudNativeKtEduSecretKey20240228CloudNativeKtEduSecretKey20240228CloudNativeKtEduSecretKey20240228
+  private-key: MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCxfnJp4m12gTLCLMoEgIXki/OXriksqCY3fDDhoHgzcTKh7/FR5+VjELp9KfYgL9NH0OIOqyx3LBa+bwFidko9tF+SoLg1S3sQj+8h1E94BrFiqESYHJKuvwZxQeM/yg8DDE9Lrmfuf/UjSGSVsAmmN0X61dX5rFUss21LyGQPrhjLQkztDageq1+i62YXUmXEZXjBulfFW8W93y9ItsRBh0bJ6kX8oQwDcf9uCb8zrtJFtDdJcse2IORUiv3dB9cqaHAJv0El0AJR4Bk/EoG4K+gJzREYtvllMTHOy3yAh3yHLmOytdQRnmVX7+pwtv/7OYOty2GW8kOtnieWNgnpAgMBAAECggEAV/GnDv+57PWnCL7YedKUhOEzGPyaOh42kVdfgOvZouN7ivEwSLz101f+jvWzlc8ciIDfARWfOo0F1+V4cijaMCinEifAHegAWfx3J/PiTD5EtfVZx2Sg6SSNNKDI0Fp1hbUbtQv9Qxbzhz/fVquanFjWu6ooE0VoDnX4uYvYyEtN8Kqc5tG4Uc+OXXHAIb7mGwlidi2lR55ZGrlXnHsSV7UX7j6aVgc//VF94qzhbBS0imHTekkfXp2PhEEZumPKmiNcU406SwG4O3KeSpm9fM4c9LlFlFIR3NKr6gvys0fbvNeXvdUjNyEJVlnhlExCam+4YqclAcb3DDUJ7Fdy4QKBgQDxTTWaSQ1TlxmIuyn01fSCnCb1hRFCKLsPH0GVbINlV8iEbQ8wTClUd665mcaHz/AYdtoNQERM8SozI5FFgh+qicgt04hFFC/B45T/YMWiqq+REpcz/L9e4SGpfwrnRLL0TmV9kZ+06FrrWfZ7D12J+lQJ0m3v5kcv2LH0WsV3lwKBgQC8Tj0HRNcGvJy/yEhuQ3SoG9LPLST9ObSzZQOA1rFEZuFC31vOMd/MMmGdlt+5HdDCRDzim8hLJ2BpZ1YyPcnMZj1QeV8tUw+LUSH3Q9efvf1NrAuWvg8klY7tcCvTvexBCsfai3JSRu+XEnJXHN9uYeF6+TNhGHMgzJCzYQS6fwKBgQCn2tK/2bNog4Kip7fe9fqZ5LABOKixwg2lzlNb81lP5Qm6fPcE3OYfOQYVXBBLp21YR00VzK/2agi1/DbxCDyo8CGNJ0ny68Dw+jRKlfHFX0C0BR+jbV1eTfORqatXB2YJJoPZHrTfLocYksMwBZdHBRjyoCwTpre8Y9wepAobTwKBgQCgq6U5AYzza5XXsd3Tb20nT25FZgCsrEM52pPtp8JjWeEUvR5JRpbtVYOjAivseLs6Nx04QbHaJkQGS6zpe30nEYl5k8YZF0kpF1YC8/kUjPiIAKd2vL6Q+aeVguNybRgbu0YhfGBUQcCGx6+WEsW2GoBY/C7Rxxncv48r7zkoowKBgCFSd9fzNPY8y0/gIlDxhiVqs6qA+4U1Rm9eHdW6R+iG66YGxuCBKB2/VskSyXLbj1VM7wgoWXm8XqpHRIiECMuP/wGShF/EcHyUIh+KURCv2SUpj5sb9Ic7avVq2fufDov771j43f9Wfe/1boD3Mo9R2GOKrylt0aDh2opfNN1j
+
+# app
+app-info:
+  app-name: "edu-spring-data-jdbc"
+  title: "Cloud Native Edu API"
+  build:
+    version: '@project.version@'
+    timestamp: '@app.build.timestamp@'
+  user-id: "jake lee"
+  org-id: "KT"
+  desc: "EDU 관련 설명입니다."
+  doc-url: "https://github.com/kt-cloudnative/education/"
+  license: "Apache License"
+  license_url: "https://github.com/kt-cloudnative/education/"
+  version: "@app.build.timestamp@"
+  doc-desc: "교육용"
+

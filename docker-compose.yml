@@ -1,0 +1,33 @@
+version: '3.3'
+services:
+    frontend:
+        image: ghcr.io/shclub/edu12-3:master
+        depends_on:
+          - backend
+        ports:
+          - 80:80
+        environment:
+          REACT_APP_API_URL: http://backend:8080
+    backend:
+        depends_on:
+          - db
+        ports:
+          - 8111:8080
+        image: ghcr.io/shclub/edu12-4:master
+        environment:
+          # dev is H2 DB , prd is MariaDB
+          SPRING_PROFILES_ACTIVE: prd
+          SPRING_DATASOURCE_USERNAME: edu
+          SPRING_DATASOURCE_PASSWORD: caravan
+    db:
+        image: ghcr.io/shclub/mariadb:10.6.9-debian-11-r4
+        ports:
+          - 3306:3306
+        volumes:
+            - ${PWD}/database:/var/lib/mysql
+            - ${PWD}/schema.sql:/docker-entrypoint-initdb.d/init.sql
+        environment:
+          MARIADB_ROOT_PASSWORD: New1234!
+          MARIADB_DATABASE: edu
+          MARIADB_USER: edu
+          MARIADB_PASSWORD: caravan
