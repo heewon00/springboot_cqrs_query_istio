@@ -23,12 +23,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
+        
+      # Install the cosign tool except on PR
+      # https://github.com/sigstore/cosign-installer
       - name: Install cosign
         if: github.event_name != 'pull_request'
-        uses: sigstore/cosign-installer@main
+        uses: sigstore/cosign-installer@6e04d228eb30da1757ee4e1dd75a0ec73a653e06 #v3.1.1
         with:
-          cosign-release: 'v2.2.1' # 예시로 제시된 최신 안정 버전, 실제 사용 시 확인 필요
+          cosign-release: 'v2.1.1'
+
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@f95db51fddba0c2d1ec667646a06c2ce06100226
